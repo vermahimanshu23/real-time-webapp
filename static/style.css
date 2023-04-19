@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+    color: white;
+}
+.main {
+    /* width: 500px;
+    height: 250px;
+    margin: 50px; */
+    margin-top: 30vh;
+    outline: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.bi{
+    margin-left: 25%;
+}
+#first{
+    margin-left: 10px;
+}
+#second{
+    margin-left: 10px;
+}
+
+/* css for registration page */
+
+.title{
+    color: black;
+}

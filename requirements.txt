@@ -1,0 +1,6 @@
+flask
+sqlalchemy
+pillow
+scikit-learn
+numpy
+plotly
