@@ -1,30 +1,30 @@
 body{
-    background-color: black;
+    background-image: url("./images/bg.jpg");
+    background-size: 250vh;
+    background-repeat: no-repeat;
     color: white;
 }
-.main {
-    /* width: 500px;
-    height: 250px;
-    margin: 50px; */
-    margin-top: 30vh;
-    outline: solid 1px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-.bi{
-    margin-left: 25%;
+.navbar{
+    font-size: 24px;
 }
-#first{
-    margin-left: 10px;
+.brand{
+    font-size: 26px;
 }
-#second{
-    margin-left: 10px;
+.mainPage{
+    margin-top: 10%;
+}
+.mainPage P{
+    font-size: 20px;
+}
+.mainPage h1{
+    font-size: 55px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* css for registration page */
 
-.title{
-    color: black;
-}
+/* @media only screen and (max-width: 600px) {
+    body{   
+        background-image: url("./images/bg2.jpg");
+        background-size: 100vh;      
+    }
+  } */
