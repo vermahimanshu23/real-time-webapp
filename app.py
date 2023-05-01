@@ -24,8 +24,18 @@ def form_view():
 
 
 @app.route('/login')
-def func_name():
+def login():
     return render_template('user_login.html')
+
+
+@app.route('/whyus')
+def whyus():
+    return render_template('whyus.html')
+
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
 
 
 if __name__ == '__main__':
