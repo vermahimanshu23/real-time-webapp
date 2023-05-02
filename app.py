@@ -32,6 +32,10 @@ def login():
 def whyus():
     return render_template('whyus.html')
 
+@app.route('/support')
+def support():
+    return render_template('support.html')
+
 
 # @app.route('/test')
 # def test():
