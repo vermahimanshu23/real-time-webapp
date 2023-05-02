@@ -25,7 +25,7 @@ def form_view():
 
 @app.route('/login')
 def login():
-    return render_template('user_login.html')
+    return render_template('login.html')
 
 
 @app.route('/whyus')
@@ -33,9 +33,9 @@ def whyus():
     return render_template('whyus.html')
 
 
-@app.route('/services')
-def services():
-    return render_template('services.html')
+# @app.route('/test')
+# def test():
+#     return render_template('test.html')
 
 
 if __name__ == '__main__':
