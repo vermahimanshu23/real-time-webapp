@@ -1,22 +1,20 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for, session
 from werkzeug .utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-db = SQLAlchemy(app)
 
+app.secret_key = 'your secret key'
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), nullable=False)
-    email = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(80), nullable=False)
-    gender = db.Column(db.String(20), nullable=False)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'realtime'
 
-    def __repr__(self):
-        return '<User %r>' % self.name
+mysql = MySQL(app)
 
 
 @app.route('/')
@@ -25,21 +23,24 @@ def index():
 
 
 @app.route('/login', methods=['GET', 'POST'])
-def form_view():
-    if request.method == 'POST':
-        with app.app_context():
-            name = request.form['name']
-            email = request.form['email']
-            password = request.form['password']
-            gender = request.form['gender']
-            print(name)
-            print(email)
-            print(password)
-            print(gender)
-            # Perform database operations here using SQLAlchemy, for example:
-            users = User.query.all()
-            print(users)
-    return render_template('login.html')
+def login():
+    msg = ''
+    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
+        email = request.form['email']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute(
+            'SELECT * FROM users WHERE email = % s AND password = % s', (email, password, ))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['email'] = account['email']
+            msg = 'Logged in successfully !'
+            return render_template('test.html', msg=msg)
+        else:
+            msg = 'Incorrect email / password !'
+    return render_template('login.html', msg=msg)
 
 
 @app.route('/whyus')
