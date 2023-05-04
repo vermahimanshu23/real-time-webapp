@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
+import re
 
 app = Flask(__name__)
 
@@ -40,6 +41,31 @@ def login():
             return render_template('test.html', msg=msg)
         else:
             msg = 'Incorrect email / password !'
+
+    if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'password' in request.form and 'gender' in request.form:
+        name = request.form['name']
+        password = request.form['password']
+        email = request.form['email']
+        gender = request.form['gender']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute(
+            'SELECT * FROM users WHERE name = % s and email = % s', (name, email))
+        account = cursor.fetchone()
+        if account:
+            msg = 'Account already exists !'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            msg = 'Invalid email address !'
+        elif not re.match(r'[A-Za-z0-9]+', name):
+            msg = 'name must contain only characters and numbers !'
+        elif not name or not password or not email:
+            msg = 'Please fill out the form !'
+        else:
+            cursor.execute(
+                'INSERT INTO users VALUES (NULL, % s, % s, % s, % s)', (name, email, password, gender))
+            mysql.connection.commit()
+            msg = 'You have successfully registered !'
+    elif request.method == 'POST':
+        msg = 'Please fill out the form !'
     return render_template('login.html', msg=msg)
 
 

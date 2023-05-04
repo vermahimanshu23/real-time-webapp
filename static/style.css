@@ -198,6 +198,10 @@ body{
     margin-left: 30%;
   }
 
+  .msg{
+    padding: 2%;
+  }
+
   /* css for open camera component */
   
 @media only screen and (max-width: 600px) {

@@ -35,10 +35,12 @@
                     <div class="row my-2">
                         <div class="col-md-6 mx-auto card bg-dark">
                             <div class="card-body bg-dark">
-                                <form method="POST" enctype="multipart/form-data" class="bg-dark">
+                                <form method="POST" enctype="multipart/form-data" class="bg-dark"
+                                    action="{{ url_for('login') }}">
                                     <div class="text-center">
                                         <h1 class="my-4 mt-1">Welcome Back</h1>
                                     </div>
+                                    <div class="msg">{{ msg }}</div>
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" name="email" id="name"
                                             placeholder="Enter Your Email" />
@@ -50,6 +52,7 @@
                                             placeholder="Enter Your Password">
                                         <label for="password" class="form-label text-dark">Password</label>
                                     </div>
+                                    <p class="my-2 text-muted">Don't Have a account ? Click on signup tab Above.</p>
 
                                     <div class="my-3 text-center">
                                         <button type="submit" class="btn btn-danger ">Login</button>
@@ -65,10 +68,12 @@
                     <div class="row my-2">
                         <div class="col-md-6 mx-auto card bg-dark">
                             <div class="card-body bg-dark">
-                                <form method="POST" enctype="multipart/form-data" class="bg-dark">
+                                <form method="POST" enctype="multipart/form-data" class="bg-dark"
+                                    action="{{ url_for('login') }}">
                                     <div class="text-center">
                                         <h1 class="my-4 mt-1">Create your account</h1>
                                     </div>
+                                    <div class="msg">{{ msg }}</div>
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" name="name" id="name"
                                             placeholder="Enter Your Name" />
@@ -102,6 +107,7 @@
                                             value="other" />
                                         <label class="form-check-label" for="">other</label>
                                     </div>
+                                    <p class="my-2 text-muted">Already Having a account ? Click on login tab Above.</p>
                                     <div class="my-3">
                                         <button type="submit" class="btn btn-danger">Register</button>
                                     </div>
