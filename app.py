@@ -26,6 +26,7 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg = ''
+    user = ''
     if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
         email = request.form['email']
         password = request.form['password']
@@ -35,10 +36,12 @@ def login():
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
+            session['name'] = account['name']
             session['id'] = account['id']
             session['email'] = account['email']
             msg = 'Logged in successfully !'
-            return render_template('test.html', msg=msg)
+            user = session['name']
+            return render_template('test.html', msg=msg, user=user)
         else:
             msg = 'Incorrect email / password !'
 

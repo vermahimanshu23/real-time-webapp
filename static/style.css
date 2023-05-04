@@ -202,7 +202,15 @@ body{
     padding: 2%;
   }
 
-  /* css for open camera component */
+  /* css for open social media footer component */
+  .footer{
+    position: fixed;
+    left: 6%;
+    bottom: 0px;
+    /* width: 100%; */
+    background-color: transparent !important;
+  }
+  
   
 @media only screen and (max-width: 600px) {
     .QueryForm{

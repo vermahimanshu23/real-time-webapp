@@ -21,10 +21,11 @@
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <header>
         <!-- place navbar here -->
-
+        {% include 'navbar.html' %}
     </header>
-    {% include 'navbar.html' %}
+
     <main>
+        <h1 class="text-center">Hello {{ user }}</h1>
         <div class="container p-4 bg-dark my-4">
             <div class="row">
                 <div class="col-sm-6">

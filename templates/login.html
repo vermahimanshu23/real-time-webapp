@@ -17,8 +17,9 @@
 <body>
     <header>
         <!-- place navbar here -->
+        {% include 'navbar.html' %}
     </header>
-    {% include 'navbar.html' %}
+
     <main>
         <nav>
             <div class="container col-md-5 nav nav-tabs bg-dark nav-justified mt-5 mb-4 LoginForm" id="nav-tab"
@@ -71,7 +72,7 @@
                                 <form method="POST" enctype="multipart/form-data" class="bg-dark"
                                     action="{{ url_for('login') }}">
                                     <div class="text-center">
-                                        <h1 class="my-4 mt-1">Create your account</h1>
+                                        <h1 class="my-3 mt-1">Create your account</h1>
                                     </div>
                                     <div class="msg">{{ msg }}</div>
                                     <div class="form-floating mb-3">
