@@ -74,9 +74,22 @@ def whyus():
     return render_template('whyus.html')
 
 
-@app.route('/support')
+@app.route('/support', methods=['GET', 'POST'])
 def support():
-    return render_template('support.html')
+    msg = ''
+    if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'phone' in request.form and 'query' in request.form:
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        query = request.form['query']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute(
+            'INSERT INTO support VALUES (NULL, % s, % s, % s, % s)', (name, email, phone, query))
+        mysql.connection.commit()
+        msg = 'We have recieved your query. Our Team will contact u soon !'
+    elif request.method == 'POST':
+        msg = 'Please fill out the form !'
+    return render_template('support.html', msg=msg)
 
 
 @app.route('/test')
