@@ -11,6 +11,8 @@ body {
 
 .brand {
   font-size: 26px;
+  transform: rotateY(180deg);
+  margin-left: 20px;
 }
 
 .mainPage {

@@ -22,22 +22,24 @@
 
     <main>
         <div class="container mainPage">
-            <h1>Car Resale Value Predication</h1>
-            <p>Welcome to Car Resale Value Predication . It predict accurate price of car</p>
-            <a name="getStarted" id="getStarted" class="btn btn-danger " href="/login" role="button">Get
-                Started <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z" />
-                    <path fill-rule="evenodd"
-                        d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z" />
-                </svg></a>
+            <div class="col-md-6 bg-dark">
+                <h1 class="text-center text-light">Fill the details</h1>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="model" id="model" placeholder="Enter Car Model">
+                    <label for="formId1">Car Model</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="md_year" id="md_year" placeholder="Enter Car Model year">
+                    <label for="formId1">Car Model year</label>
+                </div>
+                
+            </div>
+
         </div>
 
 
     </main>
     <footer>
-        {% include 'footer.html' %}
         <!-- place footer here -->
     </footer>
     <!-- Bootstrap JavaScript Libraries -->

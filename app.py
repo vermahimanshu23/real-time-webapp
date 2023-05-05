@@ -21,6 +21,10 @@ def login():
 def support():
     return render_template('support.html')
 
+@app.route('/prediction', methods=['GET', 'POST'])
+def prediction():
+    return render_template('prediction_form.html')
+
 
 
 if __name__ == '__main__':
