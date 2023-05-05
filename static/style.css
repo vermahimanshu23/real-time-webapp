@@ -1,219 +1,239 @@
-body{
-    background-image: url("./images/bg.jpg");
-    background-size: 250vh;
-    background-repeat: no-repeat;
-    color: white;
+body {
+  background-image: url("./images/bg.jpeg");
+  background-size: 250vh;
+  background-repeat: no-repeat;
+  color: black;
 }
-.navbar{
-    font-size: 24px;
+
+.navbar {
+  font-size: 24px;
 }
-.brand{
-    font-size: 26px;
+
+.brand {
+  font-size: 26px;
 }
-.mainPage{
-    margin-top: 10%;
+
+.mainPage {
+  margin-top: 10%;
 }
-.mainPage P{
-    font-size: 20px;
+
+.mainPage P {
+  font-size: 20px;
 }
-.mainPage h1{
-    font-size: 55px;
-    font-family: 'Times New Roman', Times, serif;
+
+.mainPage h1 {
+  font-size: 55px;
+  font-family: 'Times New Roman', Times, serif;
 }
-.LoginForm{
-    padding-right: 0px;
+
+.LoginForm {
+  padding-right: 0px;
 }
-#CustomerCare{
-    border-radius: 50%;
-    margin-bottom: 2%;
+
+#CustomerCare {
+  border-radius: 50%;
+  margin-bottom: 2%;
 }
-.QueryForm{
-    margin-left: 25%;
+
+.QueryForm {
+  margin-left: 25%;
 }
-.form-control{
-    height: 10px;
+
+.form-control {
+  height: 10px;
 }
 
 /* css for green dot */
 .ring-container {
-    position: relative;
+  position: relative;
 }
 
 .circle {
-    width: 15px;
-    height: 15px;
-    background-color: #62bd19;
-    border-radius: 50%;
-    position: absolute;
-    top: 23px;
-    left: 23px;
+  width: 15px;
+  height: 15px;
+  background-color: #62bd19;
+  border-radius: 50%;
+  position: absolute;
+  top: 23px;
+  left: 23px;
 }
 
 .ringring {
-    border: 3px solid #62bd19;
-    -webkit-border-radius: 30px;
-    height: 25px;
-    width: 25px;
-    position: absolute;
-    left: 18px;
-    top: 18px;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite; 
-    opacity: 0.0
+  border: 3px solid #62bd19;
+  -webkit-border-radius: 30px;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.0
 }
+
 @-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+
+  50% {
+    opacity: 1.0;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0.0;
+  }
 }
 
 /* css for uload file page */
 .file-upload {
-    background-color: #ffffff;
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 5px;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .file-upload-btn {
-    width: 100%;
-    margin: 0;
-    color: #fff;
-    background: #1FB264;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    border-bottom: 4px solid #15824B;
-    transition: all .2s ease;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  
-  .file-upload-btn:hover {
-    background: #1AA059;
-    color: #ffffff;
-    transition: all .2s ease;
-    cursor: pointer;
-  }
-  
-  .file-upload-btn:active {
-    border: 0;
-    transition: all .2s ease;
-  }
-  
-  .file-upload-content {
-    display: none;
-    text-align: center;
-  }
-  
-  .file-upload-input {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .image-upload-wrap {
-    margin-top: 20px;
-    border: 4px dashed #1FB264;
-    position: relative;
-  }
-  
-  .image-dropping,
-  .image-upload-wrap:hover {
-    background-color: #1FB264;
-    border: 4px dashed #ffffff;
-  }
-  
-  .image-title-wrap {
-    padding: 0 15px 15px 15px;
-    color: #222;
-  }
-  
-  .drag-text {
-    text-align: center;
-  }
-  
-  .drag-text h3 {
-    font-weight: 100;
-    text-transform: uppercase;
-    color: #15824B;
-    padding: 60px 0;
-  }
-  
-  .file-upload-image {
-    max-height: 200px;
-    max-width: 200px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .remove-image {
-    width: 200px;
-    margin: 0;
-    color: #fff;
-    background: #cd4535;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    border-bottom: 4px solid #b02818;
-    transition: all .2s ease;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  
-  .remove-image:hover {
-    background: #c13b2a;
-    color: #ffffff;
-    transition: all .2s ease;
-    cursor: pointer;
-  }
-  
-  .remove-image:active {
-    border: 0;
-    transition: all .2s ease;
-  }
+  background-color: #ffffff;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+}
 
-  .OpenCamera{
-    width: 40%;
-    margin: 0;
-    color: #fff;
-    background: #1FB264;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    border-bottom: 4px solid #15824B;
-    transition: all .2s ease;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-left: 30%;
-  }
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-  .msg{
-    padding: 2%;
-  }
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
 
-  /* css for open social media footer component */
-  .footer{
-    position: fixed;
-    left: 6%;
-    bottom: 0px;
-    /* width: 100%; */
-    background-color: transparent !important;
-  }
-  
-  
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.OpenCamera {
+  width: 40%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 30%;
+}
+
+.msg {
+  padding: 2%;
+}
+
+/* css for open social media footer component */
+.footer {
+  position: fixed;
+  left: 6%;
+  bottom: 0px;
+  /* width: 100%; */
+  background-color: transparent !important;
+}
+
+
 @media only screen and (max-width: 600px) {
-    .QueryForm{
-        margin-left: 5%;
-    }
+  .QueryForm {
+    margin-left: 5%;
   }
+}
