@@ -61,14 +61,14 @@ def login():
         elif not re.match(r'[A-Za-z0-9]+', name):
             msg = 'name must contain only characters and numbers !'
         elif not name or not password or not email:
-            msg = 'Please fill out the form !'
+            msg = 'Invalid ID and Password !'
         else:
             cursor.execute(
                 'INSERT INTO users VALUES (NULL, % s, % s, % s, % s)', (name, email, password, gender))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
-        msg = 'Please fill out the form !'
+        msg = 'Invalid data !'
     return render_template('login.html', msg=msg)
 
 
